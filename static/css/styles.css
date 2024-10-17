@@ -1,0 +1,384 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+  background: #cccccc6e;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+::selection {
+  background: rgba(37, 37, 37, 0.3);
+}
+
+.container,
+.container2 {
+  width: 90%;
+  max-width: 600px; 
+  padding: 0 20px;
+}
+
+.wrapper {
+  width: 100%;
+    height: 450px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 4px 10px 1px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .title {
+  height: 90px;
+  background: #303030;
+  border-radius: 5px 5px 0 0;
+  color: #fff;
+  font-size: 30px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper form {
+  padding: 30px 25px 25px 25px;
+}
+
+.wrapper .row {
+  height: 45px;
+  margin: 15px 15px 15px 15px;
+  position: relative;
+}
+
+.wrapper .row1 {
+  height: 45px;
+  margin-top: 10px;
+  margin-bottom: 9px;
+  position: relative;
+}
+
+.wrapper input,
+.wrapper select {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  padding-left: 60px;
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.wrapper input:focus,
+.wrapper select:focus {
+  border-color: #303030;
+  box-shadow: inset 0px 0px 2px 2px rgba(159, 249, 255, 0.25);
+}
+
+.wrapper input::placeholder {
+  color: #999;
+}
+
+.data,
+label,
+select {
+  font-family: "Poppins", sans-serif;
+}
+
+.wrapper .row i {
+  position: absolute;
+  width: 47px;
+  height: 100%;
+  color: #fff;
+  font-size: 18px;
+  background: #303030;
+  border: 1px solid #000000;
+  border-radius: 5px 0 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper .pass a {
+  color: #239fa8;
+  font-size: 17px;
+  text-decoration: none;
+}
+
+.pass {
+  margin-bottom: 15px;
+    margin-top: 20px;
+    text-align: center;
+    padding: 0px 20px 20px 20px;
+}
+
+.wrapper .pass a:hover {
+  text-decoration: underline;
+}
+
+.wrapper .button input[type="submit"] {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 10px 20px;
+  background: #303030;
+  border: 1px solid #303030;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.wrapper .button input[type="submit"]:hover {
+  background: #000000;
+}
+
+.wrapper .signup-link {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 17px;
+    padding: 0px 20px 20px 20px;
+}
+
+.wrapper .signup-link a {
+  color: #239fa8;
+  text-decoration: none;
+}
+
+.wrapper .signup-link a:hover {
+  text-decoration: underline;
+}
+
+.input-file input[type="file"] {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  display: block;
+  width: 0;
+  height: 0;
+
+}
+
+.input-file:active span {
+  background-color: #239fa8;
+}
+
+#fileNameDisplay {
+  display: inline-block;
+  margin-top: 5px;
+  text-align: center;
+  max-width: 330px;
+  max-height: 15px;
+}
+
+.input-file {
+  position: relative;
+    margin: 15px;
+}
+
+.input-file span {
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #333;
+}
+
+.input-file span:hover {
+  background-color: #f0f0f0;
+}
+
+h2 {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f0f0f0;
+  background-color: #303030;
+  padding: 11px;
+  border-radius: 5px;
+    margin: 15px;
+}
+
+.forms{
+    display: contents;
+}
+
+.btnactivate{
+    height: 45px;
+    width: 100%;
+    margin-bottom: 34px;
+    position: relative;
+    color: #fff;
+    font-size: 20px;
+    justify-content: center;
+    font-weight: 500;
+    padding-left: 0px;
+    background: #303030;
+    border: 1px solid #303030;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.row_button{
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 50px;
+}
+
+@media screen and (max-width: 1050px) {
+  #fileNameDisplay {
+    font-size: 14px;
+    margin-top: -30px;
+    text-align: center;
+    max-width: 300px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        background: #cccccc6e;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        flex-direction: column;
+      }
+    
+      #fileNameDisplay {
+        font-size: 14px;
+        margin-top: -30px;
+        text-align: center;
+        max-width: 300px;
+      }
+
+
+    .wrapper .title {
+      height: 50px;
+      font-size: 20px;
+    }
+  
+    .wrapper form {
+      padding: 15px;
+    }
+  
+    .wrapper form .row,
+    .wrapper form .row1 {
+      height: 40px;
+      margin-bottom: 8px;
+    }
+  
+    .wrapper form input,
+    .wrapper form select {
+      padding-left: 40px;
+      font-size: 12px;
+    }
+  
+    .wrapper form .row i {
+      width: 30px;
+      font-size: 14px;
+    }
+  
+    .wrapper form .pass a,
+    .wrapper form .signup-link {
+      font-size: 12px;
+    }
+  }
+
+@media screen and (max-width: 600px) {
+    body {
+        background: #cccccc6e;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        flex-direction: column;
+      }
+      
+      #fileNameDisplay {
+        font-size: 6px;
+        margin-top: -30px;
+        text-align: center;
+        max-width: 40px;
+      }
+      
+    .wrapper .title {
+      height: 50px;
+      font-size: 20px;
+    }
+  
+    .wrapper form {
+      padding: 15px;
+    }
+  
+    .wrapper form .row,
+    .wrapper form .row1 {
+      height: 40px;
+      margin-bottom: 8px;
+    }
+  
+    .wrapper form input,
+    .wrapper form select {
+      padding-left: 40px;
+      font-size: 12px;
+    }
+  
+    .wrapper form .row i {
+      width: 30px;
+      font-size: 14px;
+    }
+  
+    .wrapper form .pass a,
+    .wrapper form .signup-link {
+      font-size: 12px;
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    body {
+      background: #cccccc6e;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+    
+    #fileNameDisplay {
+      font-size: 10px;
+      margin-top: -30px;
+      text-align: center;
+      max-width: 90px;
+    }
+  }
+
+  @media screen and (max-width: 330px) {
+    body {
+      background: #cccccc6e;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+    
+    #fileNameDisplay {
+      font-size: 6px;
+      margin-top: -30px;
+      text-align: center;
+      max-width: 40px;
+    }
+  }

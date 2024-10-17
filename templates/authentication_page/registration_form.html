@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Регистрация</title>
+  <link rel="stylesheet" href="{% static 'css/styles.css'%}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+</head>
+<body>
+<form class="forms" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <div class="container">
+    <div class="wrapper">
+      <div class="title"><span>Данные</span></div>
+      <div class="row">
+        <i class="fas fa-user"></i>
+        <input name="fio" type="text" id="name" placeholder="ФИО" required>
+      </div>
+      <div class="row">
+        <i class="fas fa-envelope"></i>
+        <input name="email" type="text" id="email" placeholder="Email" required>
+      </div>
+      <div class="row">
+        <i class="fas fa-lock"></i>
+        <input name="password" type="password" id="password" placeholder="Пароль" required>
+      </div>
+      <div class="row">
+        <i class="fas fa-retweet"></i>
+        <input name="repeat_password" type="password" id="confirmPassword" placeholder="Повторите пароль" required>
+      </div>
+      <div class="row">
+        <i class="fas fa-birthday-cake"></i>
+        <input name="dob" class="data" type="date" value="Data of bd">
+      </div>
+      <div class="signup-link">Уже есть аккаунт? <a href="{% url 'main:login' %}">Войдите</a></div>
+    </div>
+  </div>
+  <div class="container2">
+    <div class="wrapper">
+      <div class="title"><span>Безопасность</span></div>
+<div class="row">
+  <i class="fas fa-street-view"></i>
+    {{ form.division }}
+</div>
+      <div class="row">
+        <i class="fas fa-key"></i>
+        <input type="text" id="key" placeholder="Idintification key" required>
+      </div>
+      <div class="bg"><h2>Фото сотрудника</h2></div>
+      <div class="row1">
+        <label class="input-file">
+          <input name="image" type="file" onchange="displayFileName(this)">
+          <span>Выберите файл</span>
+        </label>
+        <div id="fileNameDisplay"></div>
+      </div>
+      <div class="pass"><a href="{% url 'main:info' %}">Что такое ключ активации?</a></div>
+    </div>
+  </div>
+  <div class="row_button">
+      <button class="btnactivate" type="submit" value="Активировать" id="activateBtn">Активировать</button>
+  </div>
+</form>
+
+<script src="{% static 'js/validation.js' %}"></script>
+
+</body>
+</html>

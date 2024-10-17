@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+    <div class="container_person">
+        <div class="wrapper_person">
+            <div class="title">
+                <span>Мелдана</span>
+            </div>
+            <input type="radio" id="tab1" name="tab-control" checked>
+            <input type="radio" id="tab2" name="tab-control">
+            <input type="radio" id="tab3" name="tab-control">
+            <form class="main_form">
+                <ul>
+                    <li title="Персонал">
+                        <label for="tab1" role="button">
+                           <svg><path></path></svg>
+                           <span>Персонал</span> 
+                        </label>
+                    </li>
+                    <li title="Учёт времени">
+                        <label for="tab2" role="button">
+                            <svg><path></path></svg>
+                            <span>Учёт времени</span> 
+                         </label>
+                    </li>
+                    <li title="Конфигурация">
+                        <label for="tab3" role="button">
+                            <svg><path></path></svg>
+                            <span>Конфигурация</span> 
+                         </label>
+                    </li>
+                </ul>
+            </form>
+            <div class="exit">
+                <label>
+
+                </label>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container_model">
+        <div class="wrapper_model">
+            <input type="radio" id="tab1.1" name="tab-switch" checked>
+            <input type="radio" id="tab2.1" name="tab-switch">
+            <input type="radio" id="tab3.1" name="tab-switch">
+            <input type="radio" id="tab4.1" name="tab-switch">
+            <form class="personal">
+                <ul>
+                    <li title="Сотрудники"></li>
+                    <li title="График работы"></li>
+                    <li title="Подразделения"></li>
+                    <li title="Должности"></li>
+                </ul>
+            </form>
+            <input type="radio" id="tab1.2" name="tab-switch" checked>
+            <input type="radio" id="tab2.2" name="tab-switch">
+            <input type="radio" id="tab3.2" name="tab-switch">
+            <form class="time_control">
+                <ul>
+                    <li title="Посещение"></li>
+                    <li title="Пропуска"></li>
+                    <li title="Оправдательные документы"></li>
+                </ul>
+            </form>
+            <input type="radio" id="tab1.3" name="tab-switch" checked>
+            <input type="radio" id="tab2.3" name="tab-switch">
+            <input type="radio" id="tab3.3" name="tab-switch">
+            <form class="configuration">
+                <ul>
+                    <li title="События системы"></li>
+                    <li title="Операторы"></li>
+                    <li title="Выданные документы"></li>
+                </ul>
+            </form>
+        </div>
+    </div>
+
+
+
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Получаем все элементы формы и контейнеры с классами
+        var mainForm = document.querySelector(".main_form");
+        var personalForm = document.querySelector(".personal");
+        var timeControlForm = document.querySelector(".time_control");
+        var configurationForm = document.querySelector(".configuration");
+
+        // Получаем все элементы управления вкладками
+        var tabs = document.querySelectorAll('[name="tab-control"]');
+
+        // Функция для скрытия всех форм
+        function hideAllForms() {
+            personalForm.style.display = "none";
+            timeControlForm.style.display = "none";
+            configurationForm.style.display = "none";
+        }
+
+        // Функция для отображения выбранной формы
+        function showForm(form) {
+            hideAllForms();
+            form.style.display = "block";
+        }
+
+        // Устанавливаем обработчик события изменения radio-button
+        mainForm.addEventListener("change", function (event) {
+            if (event.target && event.target.matches('[name="tab-control"]')) {
+                // Определяем, какая вкладка выбрана
+                if (event.target.id === "tab1") {
+                    showForm(personalForm);
+                } else if (event.target.id === "tab2") {
+                    showForm(timeControlForm);
+                } else if (event.target.id === "tab3") {
+                    showForm(configurationForm);
+                }
+            }
+        });
+
+        // По умолчанию показываем форму, соответствующую выбранной вкладке
+        if (document.querySelector('[name="tab-control"]:checked')) {
+            var selectedTabId = document.querySelector('[name="tab-control"]:checked').id;
+            if (selectedTabId === "tab1") {
+                showForm(personalForm);
+            } else if (selectedTabId === "tab2") {
+                showForm(timeControlForm);
+            } else if (selectedTabId === "tab3") {
+                showForm(configurationForm);
+            }
+        }
+    });
+</script>
+</html>

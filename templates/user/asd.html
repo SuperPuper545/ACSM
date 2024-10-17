@@ -1,0 +1,73 @@
+{% extends "user/base.html" %}
+{% load static %}
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>СКУД - профиль</title>
+</head>
+<body>
+{% block nav1 %}"nav-option option1"{% endblock %}
+{% block nav2 %}"nav-option option2"{% endblock %}
+{% block main %}
+    <div class="main">
+        <style>
+            .report-body {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .form-1 {
+                flex: 1 1 50%; /* Распределение пространства между формой и изображением */
+                display: flex;
+                flex-direction: row;
+                padding: 4px;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .form-2 {
+                flex: 1 1 50%; /* Распределение пространства между формой и изображением */
+                display: flex;
+                flex-direction: row;
+                padding: 4px;
+                flex-wrap: wrap;
+                justify-content: flex-end;
+            }
+            .report-container1 {
+                max-width: 900px;
+                height: 600px;
+            }
+            .fasd{
+                padding-bottom: 25px;
+                color: var(--a-color);
+            }
+        </style>
+        <div class="report-container1">
+            <div class="report-header">
+                {% csrf_token %}
+                <h1 class="recent-Articles">Ваши данные</h1>
+            </div>
+            <div class="report-body">
+            <form class="form-1" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                <h3 class="fasd">E-mail: {{ staff_member.email }}</h3>
+                <h3 class="fasd">Дата рождения: {{ staff_member.dob }}</h3>
+                <h3 class="fasd">Номер телефона: {{ staff_member.phone_number }}</h3>
+                <h3 class="fasd">Подразделение: {{ staff_member.division }}</h3>
+                <h3 class="fasd">Должность: {{ staff_member.post }}</h3>
+                <h3 class="fasd">Шаблон доступа: {{ staff_member.pattern }}</h3>
+                <h3 class="fasd">График работы: {{ staff_member.time }}</h3>
+                <h3 class="fasd">Последний вход: {{ staff_member.last_login }}</h3>
+            </form>
+            <form class="form-2">
+                <div class="img" >
+                    <img src="{{ staff_member.image.url }}" alt="Фото сотрудника" style="width: 300px; height: 300px;">
+                </div>
+            </form>
+                </div>
+        </div>
+    </div>
+{% endblock %}
+</body>
+</html>

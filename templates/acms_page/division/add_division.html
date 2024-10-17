@@ -1,0 +1,51 @@
+{% extends "acms_page/base.html" %}
+{% load static %}
+
+{% block title %}{{ employee.fio }}{% endblock %}
+
+{% block nav1 %}"nav-option option1"{% endblock %}
+{% block nav2 %}"nav-option option2"{% endblock %}
+{% block nav3 %}"nav-option option3"{% endblock %}
+{% block nav4 %}"nav-option option4"{% endblock %}
+
+{% block main %}
+    <div class="main">
+        <div class="report-container">
+            <style>
+                    .report-container {
+                        max-width: 500px;
+                        height: 600px;
+                    }
+                    .form-1 {
+                        display: flex;
+                        flex-direction: column;
+                        padding: 4px;
+                        flex-wrap: wrap;
+                        align-items: center;
+                        justify-content: space-between;
+                    }
+                    /* Значения p элементов большего размера */
+                    .report-body p {
+                        display: flex;
+                        flex-direction: column;
+                        font-size: 1.2em;
+                    }
+                    p{
+                        width: 250px;
+                        margin-bottom: 10px;
+                        font-size: 16px;
+                    }
+                </style>
+            <div class="report-header">
+                <h1 class="recent-Articles">Добавить подразделение</h1>
+            </div>
+            <div class="report-body">
+                <form class="form-1" method="post">
+                    {% csrf_token %}
+                    {{ form_add.as_p }}
+                    <button class="view" type="submit">Добавить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

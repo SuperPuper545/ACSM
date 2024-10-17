@@ -1,0 +1,142 @@
+{% extends "acms_page/base.html" %}
+{% load static %}
+
+{% block title %}{{ employee.fio }}{% endblock %}
+
+{% block nav1 %}"nav-option option1"{% endblock %}
+{% block nav2 %}"nav-option option2"{% endblock %}
+{% block nav3 %}"nav-option option3"{% endblock %}
+{% block nav4 %}"nav-option option4"{% endblock %}
+
+{% block main %}
+    <div class="main">
+        <div class="report-container">
+            <div class="report-header">
+                <h1 class="recent-Articles">{{ employee.fio }}</h1>
+            </div>
+
+            <div class="report-body">
+                <style>
+                    /* Поле формы и картинки в строку */
+                    .report-body {
+                        display: flex;
+                        flex-wrap: wrap;
+                    }
+
+                    .form-1 {
+                        flex: 1 1 50%; /* Распределение пространства между формой и изображением */
+                        display: flex;
+                        flex-direction: row;
+                        padding: 4px;
+                        flex-wrap: wrap;
+                        align-items: center;
+                        justify-content: space-between;
+                    }
+                    .form-2 {
+                        flex: 1 1 50%; /* Распределение пространства между формой и изображением */
+                        display: flex;
+                        flex-direction: row;
+                        padding: 4px;
+                        flex-wrap: wrap;
+                        justify-content: flex-end;
+                    }
+
+                    /* Значения p элементов большего размера */
+                    .report-body p {
+                        display: flex;
+                        flex-direction: column;
+                        font-size: 1.2em;
+                    }
+
+                    .img {
+                        display: flex;
+                        flex-direction: column;
+                        flex-wrap: wrap;
+                        align-content: flex-end;
+                        align-items: center;
+                    }
+
+                    /* 3. input элемент будет более красивый и длинный, доходящий до картинки */
+                    .content_staff {
+                        font-family: "Poppins", sans-serif;
+                        font-size: 16px;
+                        width: 250px;
+                        margin-bottom: 10px;
+                    }
+
+                    input[name="dob"],
+                    input[name="email"],
+                    input[name="fio"] {
+                        width: 250px; /* Учитывает текст ссылки и кнопку "изменить" */
+                        margin-bottom: 10px;
+                        font-size: 16px;
+                    }
+
+                    /* Дополнительный стиль для кнопки "изменить" */
+                    .form-el a {
+                        margin-right: 10px;
+                    }
+                    .report-container {
+                        max-width: 1100px;
+                        height: 600px;
+                    }
+                    .dti{
+                        width: 250px;
+                        margin-bottom: 10px;
+                        font-size: 16px;
+                    }
+                    .btm{
+                        position: relative;
+                    }
+                </style>
+                <form class="form-1" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <p>
+                        <label for="id_fio">ФИО:</label>
+                        {{ form.fio }}
+                    </p>
+                    <p>
+                        <label for="id_email">E-mail:</label>
+                        {{ form.email }}
+                    </p>
+                    <p>
+                        <label for="id_dob">Дата рождения:</label>
+                        {{ form.dob }}
+                    </p>
+                    <p class="dti">
+                        <label for="id_division">Подразделение:</label>
+                        {{ form.division }}
+                    </p>
+                    <p class="dti">
+                        <label for="id_time">График работы:</label>
+                        {{ form.time }}
+                    </p>
+                    <p class="dti">
+                        <label for="id_image">Фотография:</label>
+                        <input type="file" name="image" id="id_image"> <!-- поле для загрузки нового изображения -->
+                    </p>
+                    <p class="dti">
+                        <label for="id_post">Должность:</label>
+                        {{ form.post }}
+                    </p>
+                    <p class="dti">
+                        <label for="id_phone_number">Номер телефона:</label>
+                        {{ form.phone_number }}
+                    </p>
+                    <div class="btm">
+                        <button class="view" type="submit">Сохранить</button>
+                    </div>
+                    <p class="dti">
+                        <label for="id_phone_number">Шаблон доступа:</label>
+                        {{ form.pattern }}
+                    </p>
+                </form>
+                <form class="form-2">
+                    <div class="img" >
+                        <img src="{{ employee.image.url }}" alt="Фото сотрудника" style="width: 400px; height: 400px;">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

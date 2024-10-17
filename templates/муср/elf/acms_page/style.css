@@ -1,0 +1,531 @@
+/* Main CSS Here */
+  
+@import url( 
+"https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"); 
+  
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+  font-family: "Poppins", sans-serif; 
+} 
+
+body { 
+  background-color: var(--background-color4); 
+  max-width: 100%; 
+  overflow-x: hidden; 
+} 
+
+body.light-theme {
+  --background-color1: #fafaff; 
+  --background-color2: #ffffff; 
+  --background-color3: #cccccc6e;
+  --background-color4: #cccccc6e;
+  --primary-color: #303030;
+  --secondary-color: rgb(52, 184, 194); 
+  --Border-color: rgb(52, 184, 194);
+  --one-use-color: #31b8bd;
+  --two-use-color: #30cbc9;
+  --a-color: #303030;
+  --reportcontainer-color: #ffffff; 
+  --reportartic-color: #303030;
+  --view-color: #ffffff; 
+  --reportcontainershadow-color: rgb(188, 188, 188); 
+  --navhover-color1: #6fa19f;
+  --navhover-color2: #9cd3d8;
+}
+body.dark-theme {
+  --background-color1: #222222; 
+  --background-color2: #222222; 
+  --background-color3: #5e5e5eb2;
+  --background-color4: #000000cc;
+  --primary-color: #ffffff;
+  --secondary-color: rgb(52, 184, 194); 
+  --Border-color: rgb(52, 184, 194);
+  --one-use-color: #31b8bd;
+  --two-use-color: #30cbc9;
+  --logo-color: rgb(233, 233, 233);
+  --a-color: #ececec;
+  --reportcontainer-color: #222222; 
+  --reportartic-color: #ffffff; 
+  --view-color: #303030; 
+  --reportcontainershadow-color: rgb(65, 65, 65); 
+  --navhover-color1: #515252;
+  --navhover-color2: #4e6c6e;
+}
+  
+header { 
+  height: 70px; 
+  width: 100vw; 
+  padding: 0 30px; 
+  background-color: var(--background-color1); 
+  position: fixed; 
+  z-index: 100; 
+  box-shadow: 1px 1px 15px rgba(161, 250, 253, 0.825); 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+} 
+  
+.logo { 
+  font-size: 27px; 
+  font-weight: 600; 
+  color: var(--logo-color); 
+}
+
+.icn { 
+  height: 30px; 
+} 
+.menuicn { 
+  cursor: pointer; 
+} 
+  
+.searchbar, 
+.message, 
+.logosec { 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+} 
+  
+.searchbar2 { 
+  display: none; 
+} 
+  
+.logosec { 
+  gap: 60px; 
+} 
+  
+.searchbar input { 
+  width: 250px; 
+  height: 42px; 
+  border-radius: 5px 0 0 5px; 
+  background-color: var(--background-color3); 
+  color: var(--logo-color);
+  padding: 0 20px; 
+  font-size: 15px; 
+  outline: none; 
+  border: none; 
+} 
+.searchbtn { 
+  width: 50px; 
+  height: 42px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  border-radius: 0px 5px 5px 0px; 
+  background-color: var(--secondary-color); 
+  cursor: pointer; 
+} 
+  
+.message { 
+  gap: 40px; 
+  position: relative; 
+  cursor: pointer; 
+} 
+.dp { 
+  height: 40px; 
+  width: 40px; 
+  background-color: #626262; 
+  border-radius: 50%; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  overflow: hidden; 
+} 
+.main-container { 
+  display: flex; 
+  width: 100vw; 
+  position: relative; 
+  top: 70px; 
+  z-index: 1; 
+} 
+.dpicn { 
+  height: 42px; 
+} 
+a {
+  text-decoration: none;
+  color: var(--a-color);
+}
+.main { 
+  height: calc(100vh - 70px); 
+  width: 100%; 
+  overflow-y: scroll; 
+  overflow-x: hidden; 
+  padding: 40px 30px 30px 30px; 
+} 
+  
+.main::-webkit-scrollbar-thumb { 
+  background-image:  
+        linear-gradient(to bottom, rgb(0, 0, 85), rgb(0, 0, 50)); 
+} 
+.main::-webkit-scrollbar { 
+  width: 5px; 
+} 
+.main::-webkit-scrollbar-track { 
+  background-color: #9e9e9eb2; 
+} 
+  
+.box-container { 
+  display: flex; 
+  justify-content: space-evenly; 
+  align-items: center; 
+  flex-wrap: wrap; 
+  gap: 50px; 
+} 
+.nav { 
+  min-height: 91vh; 
+  width: 250px; 
+  background-color: var(--background-color2); 
+  position: absolute; 
+  top: 0px; 
+  left: 00; 
+  box-shadow: 1px 1px 10px rgba(161, 250, 253, 0.825); 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: space-between; 
+  align-items: center;
+  overflow: hidden; 
+  padding: 30px 0 20px 10px; 
+} 
+.navcontainer { 
+  height: calc(100vh - 70px); 
+  width: 250px; 
+  position: relative; 
+  overflow-y: scroll; 
+  overflow-x: hidden; 
+  transition: all 0.5s ease-in-out; 
+} 
+.navcontainer::-webkit-scrollbar { 
+  display: none; 
+} 
+.navclose { 
+  width: 77px; 
+} 
+.nav-option { 
+  width: 250px; 
+  height: 60px; 
+  display: flex; 
+  align-items: center; 
+  padding: 0 30px 0 20px; 
+  gap: 20px; 
+  transition: all 0.1s ease-in-out; 
+} 
+.nav-option:hover { 
+  border-left: 5px solid var(--navhover-color1); 
+  background-color: var(--navhover-color2); 
+  cursor: pointer; 
+} 
+.nav-img { 
+  height: 30px; 
+} 
+svg{
+  fill: var(--primary-color);
+}
+  
+.nav-upper-options { 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  gap: 30px; 
+} 
+  
+.option1 { 
+  border-left: 5px solid #27a29aaf; 
+  background-color: var(--Border-color); 
+  color: white; 
+  cursor: pointer; 
+} 
+.option1:hover { 
+  border-left: 5px solid #00584faf; 
+  background-color: var(--Border-color); 
+} 
+.box { 
+  height: 75px; 
+  width: 230px; 
+  border-radius: 5px; 
+  padding: 20px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-around; 
+  cursor: pointer; 
+  transition: transform 0.3s ease-in-out; 
+} 
+.box:hover { 
+  transform: scale(1.08); 
+} 
+  
+.box:nth-child(1) { 
+  background-color: var(--one-use-color); 
+} 
+.box:nth-child(2) { 
+  background-color: var(--two-use-color); 
+} 
+.box:nth-child(3) { 
+  background-color: var(--one-use-color); 
+} 
+.box:nth-child(4) { 
+  background-color: var(--two-use-color); 
+} 
+  
+.box img { 
+  height: 50px; 
+} 
+.box .text { 
+  color: white; 
+} 
+.topic { 
+  font-size: 17px; 
+  font-weight: 400; 
+  letter-spacing: 1px; 
+}
+  
+.report-container { 
+  min-height: 300px; 
+  max-width: 1500px; 
+  margin: 70px auto 0px auto; 
+  background-color: var(--reportcontainer-color); 
+  border-radius: 5px; 
+  box-shadow: 3px 3px 10px var(--reportcontainershadow-color); 
+  padding: 0px 20px 20px 20px; 
+} 
+.report-container1 { 
+  min-height: 600px; 
+  max-width: 1200px; 
+  margin: 30px auto 0px auto; 
+  background-color: var(--reportcontainer-color); 
+  border-radius: 5px; 
+  box-shadow: 3px 3px 10px rgb(188, 188, 188); 
+  padding: 0px 20px 20px 20px; 
+} 
+
+.report-header { 
+  height: 80px; 
+  width: 100%; 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  padding: 20px 20px 10px 20px; 
+  border-bottom: 2px solid rgb(52, 184, 194);  
+} 
+  
+.recent-Articles { 
+  font-size: 30px; 
+  font-weight: 600; 
+  color: var(--reportartic-color);  
+} 
+ 
+.button-grid {
+  display: block;
+}
+
+.view { 
+  height: 35px; 
+  width: 90px; 
+  border-radius: 5px; 
+  background-color: var(--a-color);
+  color: var(--view-color);
+  font-size: 15px; 
+  border: none; 
+  cursor: pointer; 
+} 
+  
+.report-body { 
+  max-width: 100%; 
+  overflow-x: auto; 
+  padding: 20px; 
+  color: var(--primary-color);
+} 
+.report-topic-heading, 
+.item1 { 
+  width: 1120px; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+} 
+.t-op { 
+  font-size: 18px; 
+  letter-spacing: 0px; 
+} 
+
+
+/* Default table styles for this demo */
+table {
+  border-collapse: collapse;
+  text-align: left;
+  width: 100%;
+}
+table tr {
+  background: var(--reportcontainer-color);
+  border-bottom: 1px solid
+}
+
+table tr:hover {
+  cursor: pointer;
+  background: var(--navhover-color2);
+}
+
+table th, table td {
+  padding: 10px 20px;
+}
+
+/* Simple CSS for scrollable table on mobile */
+table {
+  min-width: 800px;
+  
+}
+
+
+  
+.items { 
+  width: 1120px; 
+  margin-top: 15px; 
+} 
+  
+.item1 { 
+  margin-top: 20px; 
+} 
+.t-op-nextlvl { 
+  font-size: 14px; 
+  letter-spacing: 0px; 
+  font-weight: 600; 
+} 
+  
+.label-tag { 
+  width: 100px; 
+  text-align: center; 
+  background-color: rgb(52, 184, 194); 
+  color: white; 
+  border-radius: 4px; 
+}
+
+
+
+
+.button, .dialog__button {
+  display: block;
+  min-width: 260px;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  padding: 9px 15px;
+  color: #000000;
+  font-size: 1.12rem;
+  font-weight: 300;
+  font-family: inherit;
+  transition: background-color 0.2s linear;
+}
+
+.dialog__button {
+  margin: 0 auto;
+}
+
+.button-orange {
+  display: flex;
+  background-color: #1dccd8;
+}
+
+.button:hover, .dialog__button:hover {
+  background-color: #FFFFFF;
+  cursor: pointer;
+  transition: background-color 0.2s linear;
+}
+
+.dialog__button:hover {
+  border: 2px solid #000000;
+}
+
+.button:focus-visible {
+  border: 2px solid #FFFFFF;
+  outline: none;
+}
+
+.dialog__button:focus-visible {
+  border: 2px solid #000000;
+  outline: none;
+}
+
+.button:focus {
+  border: 2px solid #FFFFFF;
+  outline: none;
+}
+
+.dialog__button:focus {
+  border: 2px solid #000000;
+  outline: none;
+}
+
+.dialog {
+  width: calc(100% - 40px);
+  max-width: 400px;
+  border: none;
+  inset: 0;
+  position: absolute;
+  left: 40%;
+  top: 40%;
+  
+}
+
+.dialog::backdrop {
+  background-color: rgb(0 0 0 / 0.6);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+}
+
+.dialog__title {
+  margin-top: 0;
+  margin-bottom: 17px;
+  font-weight: 500;
+  font-size: 1.375rem;
+}
+
+.dialog p {
+  margin: 15px 0;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.content section{
+  display: none;
+}
+
+#themeToggle{
+  color: var(--logo-color);
+}
+
+#tab1:checked ~ .content #tab1-content,
+#tab2:checked ~ .content #tab2-content,
+#tab3:checked ~ .content #tab3-content,
+#tab4:checked ~ .content #tab4-content{
+  display: block;
+}
+
+section {
+  animation: 0.5s ease-in-out 1 content;
+  line-height: 1.4;
+}
+
+@keyframes content {
+  from {
+    opacity: 0;
+    transform: translateY(5%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes box-container {
+  from {
+    opacity: 0;
+    transform: translateY(5%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}

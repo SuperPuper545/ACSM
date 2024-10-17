@@ -1,0 +1,74 @@
+{% extends "acms_page/base.html" %}
+{% load static %}
+
+{% block title %}{{ employee.fio }}{% endblock %}
+
+{% block nav1 %}"nav-option option1"{% endblock %}
+{% block nav2 %}"nav-option option2"{% endblock %}
+{% block nav3 %}"nav-option option3"{% endblock %}
+{% block nav4 %}"nav-option option4"{% endblock %}
+
+{% block main %}
+    <div class="main">
+        <div class="report-container">
+            <div class="report-header">
+                <h1 class="recent-Articles">Добавить сотрудника</h1>
+            </div>
+            <div class="report-body">
+                <style>
+                    /* Поле формы и картинки в строку */
+                    .report-body {
+                        display: flex;
+                        flex-wrap: wrap;
+                    }
+
+                    /* Значения p элементов большего размера */
+                    .report-body p {
+                        display: flex;
+                        flex-direction: column;
+                        font-size: 1.2em;
+                    }
+
+                    p {
+                        width: 250px; /* Учитывает текст ссылки и кнопку "изменить" */
+                        margin-bottom: 10px;
+                        font-size: 16px;
+                    }
+
+                    /* Дополнительный стиль для кнопки "изменить" */
+                    .form-el a {
+                        margin-right: 10px;
+                    }
+                    .report-container {
+                        max-width: 900px;
+                        height: 600px;
+                    }
+                    .tep{
+                        display: flex;
+                        align-content: space-around;
+                        flex-wrap: wrap;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: flex-end;
+                    }
+                    button {
+                      height: 35px;
+                      width: 90px;
+                      border-radius: 5px;
+                      background-color: var(--a-color);
+                      color: var(--view-color);
+                      font-size: 15px;
+                      border: none;
+                      cursor: pointer;
+                    }
+
+                </style>
+                <form class ="tep" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form_add.as_p }}
+                    <button type="submit">Добавить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

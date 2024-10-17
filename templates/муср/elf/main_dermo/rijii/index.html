@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>СКУД - система</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+
+    <div class="container_person">
+        <div class="wrapper_person">
+            <div class="title">
+                <span>Мелдана</span>
+            </div>
+            <form class="main_form">
+                <input type="radio" id="tab1" name="tab-control" checked>
+                <input type="radio" id="tab2" name="tab-control">
+                <input type="radio" id="tab3" name="tab-control">
+                <ul class="ul_person">
+                    <li class="li_person" title="Персонал">
+                        <label for="tab1" class="nav_usr" role="button">
+                           <svg viewBox="0 0 18 18">
+                                <path d="M10.31,9.12H5.5A4.52,4.52,0,0,0,1,13.62,2.34,2.34,0,0,0,1,14H14.78a2.34,2.34,0,0,0,0-.38A4.51,4.51,0,0,0,10.31,9.12ZM8,7.88A3.94,3.94,0,1,0,4.06,3.94,3.94,3.94,0,0,0,8,7.88Z"/>
+                           </svg>
+                           <span class="person_span">Персонал</span> 
+                        </label>
+                    </li>
+                    <li class="li_person" title="Учёт времени">
+                        <label class="nav_usr" for="tab2" role="button">
+                            <svg viewBox="0 0 18 18">
+                                <path d="M10,2.33V.18A8.5,8.5,0,0,0,8.52,0h-.1A7.52,7.52,0,0,0,3,12.56H3A6.48,6.48,0,1,0,10,2.33ZM8,13.57a5.09,5.09,0,1,1,5.09-5.08A5.1,5.1,0,0,1,8,13.57ZM7.3,8.71,5.83,10.18l1,1L8.7,9.29V4.76H7.3Z"/>
+                            </svg>
+                            <span class="person_span">Учёт времени</span> 
+                         </label>
+                    </li>
+                    <li class="li_person" title="Конфигурация">
+                        <label class="nav_usr" for="tab3" role="button">
+                            <svg viewBox="0 0 18 18">
+                                <path d="M11.5,1.78h-7L1,8l3.5,6.22h7L15,8ZM8,10.7A2.7,2.7,0,1,1,10.7,8,2.7,2.7,0,0,1,8,10.7Z"/>
+                            </svg>
+                            <span class="person_span">Конфигурация</span>
+                         </label>
+                    </li>
+                </ul>
+            </form>
+            </div>
+            <div class="exit">
+                <label class="author">
+
+                </label>
+        </div>
+    </div>
+
+
+
+    <div class="container_model">
+        <div class="wrapper_model">
+            <div class="content">
+                <input type="radio" id="tab1.1" name="tab-switch" checked>
+                <input type="radio" id="tab2.1" name="tab-switch">
+                <input type="radio" id="tab3.1" name="tab-switch">
+                <input type="radio" id="tab4.1" name="tab-switch">
+                <section id="tab1-content">
+                    <p>fdsfs</p>
+                    <form class="personal" id="personal">
+                        <ul class="ul_model">
+                            <li class="li_model" title="Сотрудники">
+                                <label for="tab1.1" role="button">
+                                    <svg><path></path></svg>
+                                    <span>Сотрудники</span> 
+                                 </label>
+                            </li>
+                            <li class="li_model" title="График работы">
+                                <label for="tab2.1" role="button">
+                                    <svg><path></path></svg>
+                                    <span>График работы</span> 
+                                 </label>
+                            </li>
+                            <li class="li_model" title="Подразделения">
+                                <label for="tab3.1" role="button">
+                                    <svg><path></path></svg>
+                                    <span>Подразделения</span> 
+                                 </label>
+                            </li>
+                            <li class="li_model" title="Должности">
+                                <label for="tab4.1" role="button">
+                                    <svg><path></path></svg>
+                                    <span>Должности</span> 
+                                 </label>
+                            </li>
+                        </ul>
+                    </form>
+                </section>
+                <input type="radio" id="tab1.2" name="tab-switch" checked>
+                <input type="radio" id="tab2.2" name="tab-switch">
+                <input type="radio" id="tab3.2" name="tab-switch">
+                <section id="tab2-content">
+                    <form class="time_control" id="time_control">
+                        <ul>
+                            <li title="Посещение">
+                                <label for="tab1.2" role="button">
+                                    <svg><path></path></svg>
+                                    <span>Посещение</span> 
+                                 </label>
+                            </li>
+                            <li title="Пропуска">
+                                <label for="tab2.2" role="button">
+                                    <svg><path></path></svg>
+                                    <span>Пропуска</span> 
+                                 </label>
+                            </li>
+                            <li title="Оправдательные документы">
+                                <label for="tab3.2" role="button">
+                                    <svg><path></path></svg>
+                                    <span>Оправдательные документы</span> 
+                                 </label>
+                            </li>
+                        </ul>
+                    </form>
+                </section>
+                <input type="radio" id="tab1.3" name="tab-switch" checked>
+                <input type="radio" id="tab2.3" name="tab-switch">
+                <input type="radio" id="tab3.3" name="tab-switch">
+                <section id="tab3-content">
+                    <form class="configuration" id="configuration">
+                        <ul>
+                            <li title="События системы">
+                                <label for="tab1.3" role="button">
+                                    <svg><path></path></svg>
+                                    <span>События системы</span> 
+                                 </label>
+                            </li>
+                            <li title="Операторы">
+                                <label for="tab2.3" role="button">
+                                    <svg><path></path></svg>
+                                    <span>Операторы</span> 
+                                 </label>
+                            </li>
+                            <li title="Выданные документы">
+                                <label for="tab3.3" role="button">
+                                    <svg><path></path></svg>
+                                    <span>Выданные документы</span> 
+                                 </label>
+                            </li>
+                        </ul>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+</html>

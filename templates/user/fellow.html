@@ -1,0 +1,43 @@
+{% extends "user/base.html" %}
+{% load static %}
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+{% block nav1 %}"nav-option option2"{% endblock %}
+{% block nav2 %}"nav-option option1"{% endblock %}
+{% block main %}
+    <div class="main">
+       <div class="report-container">
+                        <div class="report-header">
+                            <h1 class="recent-Articles">Коллеги</h1>
+                        </div>
+
+                        <div class="report-body">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>ФИО</th>
+                                        <th>Подразделение</th>
+                                        <th>Фотография</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for employee in staff %}
+                                            <td>{{ employee.fio }}</td>
+                                            <td>{{ employee.division }}</td>
+                                            <td><img src="{{ employee.image.url }}" style="width: 40px; height: 40px;"></td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+    </div>
+{% endblock %}
+</body>
+</html>

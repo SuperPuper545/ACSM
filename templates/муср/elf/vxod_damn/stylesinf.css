@@ -1,0 +1,298 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+  background: #fcca6e;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+::selection {
+  background: rgba(255, 157, 29, 0.3);
+}
+
+.content section h2,
+ul li label {
+  font-family: "Montserrat";
+  font-weight: bold;
+  font-size: 18px;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  
+  li {
+    box-sizing: border-box;
+    flex: 1;
+    padding: 0 10px;
+    text-align: center;
+    
+    label {
+      transition: all 0.3s ease-in-out;
+      padding: 5px auto;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: block;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      white-space: nowrap;
+      -webkit-touch-callout: none;
+      br {
+        display: none;
+      }
+      
+      svg {
+        height: 1.2em;
+        margin-right: 0.2em;
+        transition: all 0.2s ease-in-out;
+      }
+  }
+}
+}
+
+.container {
+  width: 90%;
+  max-width: 1000px; 
+  min-height: 500px; 
+  padding: 0 20px;
+
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 500px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 4px 10px 1px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .title {
+  height: 90px;
+  background: #eba030;
+  border-radius: 5px 5px 0 0;
+  color: #fff;
+  font-size: 30px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper form {
+  padding: 25px 25px 25px 25px;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+p{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 21px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+a:link,a:hover,a:visited,a:active{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 21px;
+  color: #eba030;
+}
+
+ul li {
+  cursor: pointer;
+}
+
+.content section {
+  display: none;
+}
+
+ul li label {
+  position: relative;
+}
+
+ul li label::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+ul li label:hover::after {
+  background-color: rgba(235, 160, 48, 0.5); /* Цвет подсветки при наведении */
+}
+
+#tab1:checked ~ .content #tab1-content,
+#tab2:checked ~ .content #tab2-content,
+#tab3:checked ~ .content #tab3-content,
+#tab4:checked ~ .content #tab4-content {
+  display: block;
+}
+
+#tab1:checked ~ ul li:nth-child(1) label::after,
+#tab2:checked ~ ul li:nth-child(2) label::after,
+#tab3:checked ~ ul li:nth-child(3) label::after,
+#tab4:checked ~ ul li:nth-child(4) label::after {
+  background-color: #eba030; /* цвет активной вкладки */
+  fill: #eba030;
+}
+
+#tab1:checked ~ ul li:nth-child(1) label,
+#tab2:checked ~ ul li:nth-child(2) label,
+#tab3:checked ~ ul li:nth-child(3) label,
+#tab4:checked ~ ul li:nth-child(4) label {
+  color: #eba030; /* цвет текста активной вкладки */
+}
+
+#tab1:checked ~ ul li:nth-child(1) svg,
+#tab2:checked ~ ul li:nth-child(2) svg,
+#tab3:checked ~ ul li:nth-child(3) svg,
+#tab4:checked ~ ul li:nth-child(4) svg {
+  fill: #eba030;/* цвет картинки активной вкладки */
+}
+
+#tab1:checked ~ ul li:nth-child(1) label::before,
+#tab2:checked ~ ul li:nth-child(2) label::before,
+#tab3:checked ~ ul li:nth-child(3) label::before,
+#tab4:checked ~ ul li:nth-child(4) label::before {
+  content: "";
+  position: absolute;
+  bottom: -7px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  background-color: #eba030; /* цвет маленькой линии под текстом */
+  border-radius: 50%;
+  transition: all 0.3s ease; /* добавляем анимацию перемещения */
+}
+
+#tab1:checked ~ ul li:nth-child(1) label::after,
+#tab2:checked ~ ul li:nth-child(2) label::after,
+#tab3:checked ~ ul li:nth-child(3) label::after,
+#tab4:checked ~ ul li:nth-child(4) label::after {
+  transform: translateY(2px); /* изменяем положение линии при выборе вкладки */
+}
+
+section {
+  animation: 0.5s ease-in-out 1 content;
+  line-height: 1.4;
+}
+
+@keyframes content {
+  from {
+    opacity: 0;
+    transform: translateY(5%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        background: #fcca6e;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        flex-direction: column;
+      }
+
+    .wrapper .title {
+      height: 50px;
+      font-size: 20px;
+    }
+  
+    .wrapper form {
+      padding: 15px;
+    }
+  
+    .wrapper form .row,
+    .wrapper form .row1 {
+      height: 40px;
+      margin-bottom: 8px;
+    }
+  
+    .wrapper form input,
+    .wrapper form select {
+      padding-left: 40px;
+      font-size: 12px;
+    }
+  
+    .wrapper form .row i {
+      width: 30px;
+      font-size: 14px;
+    }
+  
+    .wrapper form .pass a,
+    .wrapper form .signup-link {
+      font-size: 12px;
+    }
+  }
+
+@media screen and (max-width: 600px) {
+    body {
+        background: #fcca6e;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        flex-direction: column;
+      }
+      
+    .wrapper .title {
+      height: 50px;
+      font-size: 20px;
+    }
+  
+    .wrapper form {
+      padding: 15px;
+    }
+  
+    .wrapper form .row,
+    .wrapper form .row1 {
+      height: 40px;
+      margin-bottom: 8px;
+    }
+  
+    .wrapper form input,
+    .wrapper form select {
+      padding-left: 40px;
+      font-size: 12px;
+    }
+  
+    .wrapper form .row i {
+      width: 30px;
+      font-size: 14px;
+    }
+  
+    .wrapper form .pass a,
+    .wrapper form .signup-link {
+      font-size: 12px;
+    }
+  }

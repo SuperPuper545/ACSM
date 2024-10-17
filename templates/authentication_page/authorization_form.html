@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>СКУД - Авторизация</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <div class="title"><span>Авторизация</span></div>
+          <form method="post">
+              {% csrf_token %}
+              <div class="row">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="Email" name="username" required>
+              </div>
+              <div class="row">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Password" name="password" required>
+              </div>
+              <div class="pass"><a href="{% url 'main:info' %}">Забыли пароль?</a></div>
+              <div class="row_button">
+                  <button class="btnactivate" type="submit" value="Активировать" id="activateBtn">Войти</button>
+              </div>
+              <div class="signup-link">Нет личного кабинета? <a href="{% url 'main:registration' %}">Создайте</a></div>
+            </form>
+      </div>
+    </div>
+  </body>
+</html>
